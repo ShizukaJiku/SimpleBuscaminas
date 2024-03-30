@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class Buscaminas {
     private final int size;
-    private final int cantMines;
+    private final int minesCount;
     private final int[][] table;
 
-    public Buscaminas(int size, int cantMines) {
+    public Buscaminas(int size, int minesCount) {
         this.size = size;
-        this.cantMines = cantMines;
+        this.minesCount = minesCount;
         this.table = new int[size][size];
         generateTable();
     }
@@ -23,7 +23,7 @@ public class Buscaminas {
         Random random = new Random();
         int minesPlaced = 0;
 
-        while (minesPlaced < cantMines) {
+        while (minesPlaced < minesCount) {
             int x = random.nextInt(size);
             int y = random.nextInt(size);
 
